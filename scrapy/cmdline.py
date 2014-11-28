@@ -95,6 +95,7 @@ def _run_print_help(parser, func, *a, **kw):
         sys.exit(2)
 #解析命令行参数
 def execute(argv=None, settings=None):
+    #如果函数参数 argv是none的话 有从命令行读取参数
     if argv is None:
         argv = sys.argv
 
