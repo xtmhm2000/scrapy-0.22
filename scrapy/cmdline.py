@@ -100,13 +100,17 @@ def execute(argv=None, settings=None):
         argv = sys.argv
 
     # --- backwards compatibility for scrapy.conf.settings singleton ---
+    #判断函数参数中是否有Settings以及 'scrapy.conf 是否在模块列表中
     if settings is None and 'scrapy.conf' in sys.modules:
         from scrapy import conf
+        #判断对象object是否包含名为name的特性（hasattr是通过调用getattr(ojbect, name)是否抛出异常来实现的）。
         if hasattr(conf, 'settings'):
             settings = conf.settings
     # ------------------------------------------------------------------
 
+   #如果settings是NONE
     if settings is None:
+
         settings = get_project_settings()
     check_deprecated_settings(settings)
 

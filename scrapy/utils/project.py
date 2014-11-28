@@ -50,6 +50,12 @@ def data_path(path, createdir=False):
     return path
 
 def get_project_settings():
+
+#     指定设定(Designating the settings)
+# ENVVAR = 'SCRAPY_SETTINGS_MODULE'
+# 当您使用Scrapy时，您需要声明您所使用的设定。这可以通过使用环境变量: SCRAPY_SETTINGS_MODULE 来完成。
+#
+# SCRAPY_SETTINGS_MODULE 必须以Python路径语法编写, 如 myproject.settings 。 注意，设定模块应该在 Python import search path 中。
     if ENVVAR not in os.environ:
         project = os.environ.get('SCRAPY_PROJECT', 'default')
         init_env(project)
